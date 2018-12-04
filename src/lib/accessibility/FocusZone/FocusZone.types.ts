@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FocusZone } from './FocusZone'
+import { ReactType } from '../../../../types/utils'
 
 /**
  * FocusZone component class interface.
@@ -67,7 +68,7 @@ export interface FocusZoneProps extends React.HTMLAttributes<HTMLElement | Focus
   /**
    * Element type the root element will use. Default is "div".
    */
-  as?: React.ReactType
+  as?: ReactType
 
   /**
    * If true, FocusZone behavior will change to match RTL environments (left/right arrows switched).

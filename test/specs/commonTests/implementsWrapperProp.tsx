@@ -3,7 +3,7 @@ import { ReactWrapper } from 'enzyme'
 import { mountWithProvider as mount } from 'test/utils'
 
 import Slot from 'src/components/Slot/Slot'
-import { ShorthandValue } from 'utils'
+import { ReactType, ShorthandValue } from 'types/utils'
 
 export interface ImplementsWrapperPropOptions {
   wrapppedComponentSelector: any
@@ -11,7 +11,7 @@ export interface ImplementsWrapperPropOptions {
 }
 
 const implementsWrapperProp = <P extends { wrapper: ShorthandValue }>(
-  Component: React.ReactType<P>,
+  Component: ReactType<P>,
   options: ImplementsWrapperPropOptions,
 ) => {
   const { wrapppedComponentSelector, wrappperComponentSelector = Slot.defaultProps.as } = options

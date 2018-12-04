@@ -7,6 +7,7 @@ import {
   ShorthandRenderCallback,
   ShorthandRenderFunction,
   ShorthandRenderer,
+  ReactType,
 } from '../../types/utils'
 import { mergeStyles } from './mergeThemes'
 
@@ -47,7 +48,7 @@ const mappedProps: { [key in HTMLTag]: ShorthandProp } = {
 
 /** A more robust React.createElement. It can create elements from primitive values. */
 export function createShorthand(
-  Component: React.ReactType,
+  Component: ReactType,
   mappedProp: string,
   valueOrRenderCallback?: ShorthandValue | ShorthandRenderCallback,
   options: CreateShorthandOptions = CREATE_SHORTHAND_DEFAULT_OPTIONS,
@@ -80,7 +81,7 @@ export function createShorthand(
  * @param {string} mappedProp A function that maps a primitive value to the Component props
  * @returns {function} A shorthand factory function waiting for `val` and `defaultProps`.
  */
-export function createShorthandFactory(Component: React.ReactType, mappedProp?: string) {
+export function createShorthandFactory(Component: ReactType, mappedProp?: string) {
   if (typeof Component !== 'function' && typeof Component !== 'string') {
     throw new Error('createShorthandFactory() Component must be a string or function.')
   }
@@ -93,7 +94,7 @@ export function createShorthandFactory(Component: React.ReactType, mappedProp?: 
 // ============================================================
 
 function createShorthandFromValue(
-  Component: React.ReactType,
+  Component: ReactType,
   mappedProp: string,
   value?: ShorthandValue,
   options: CreateShorthandOptions = CREATE_SHORTHAND_DEFAULT_OPTIONS,
@@ -201,7 +202,7 @@ function createShorthandFromValue(
 }
 
 function createShorthandFromRenderCallback(
-  Component: React.ReactType,
+  Component: ReactType,
   mappedProp: string,
   renderCallback: ShorthandRenderCallback,
   options: CreateShorthandOptions = CREATE_SHORTHAND_DEFAULT_OPTIONS,

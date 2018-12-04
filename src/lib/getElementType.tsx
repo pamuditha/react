@@ -1,5 +1,4 @@
-import { ReactType } from 'react'
-import { Props } from '../../types/utils'
+import { Props, ReactType } from '../../types/utils'
 
 /**
  * Returns a createElement() type based on the props of the Component.

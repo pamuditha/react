@@ -76,10 +76,7 @@ export class FocusTrapZone extends React.Component<FocusTrapZoneProps, {}> {
       { handledProps: [..._.keys(FocusTrapZone.propTypes)] },
       this.props,
     )
-    const ElementType = getElementType(
-      { defaultProps: FocusTrapZone.defaultProps },
-      this.props,
-    ) as any
+    const ElementType = getElementType({ defaultProps: FocusTrapZone.defaultProps }, this.props)
 
     return (
       <ElementType

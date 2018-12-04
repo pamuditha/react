@@ -28,6 +28,7 @@ export type ObjectOrFunc<TResult, TArg = {}> = ((arg: TArg) => TResult) | TResul
 export type Props = ObjectOf<any>
 
 export type ReactChildren = React.ReactNodeArray | React.ReactNode
+export type ReactType<P = any> = string | React.FunctionComponent<P> | React.ComponentClass<P>
 
 export type ReactPropsStrict<T> = { [K in keyof T]: NullableIfUndefined<T[K]> }
 export type ReactProps<T> = Extendable<ReactPropsStrict<T>>
@@ -39,7 +40,7 @@ export type ComponentEventHandler<TProps> = (event: React.SyntheticEvent, data: 
 // ========================================================
 
 export type ShorthandRenderFunction = (
-  Component: React.ReactType,
+  Component: ReactType,
   props: Props,
 ) => React.ReactElement<any>
 

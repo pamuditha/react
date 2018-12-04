@@ -18,7 +18,7 @@ import {
   State,
   ThemePrepared,
 } from '../themes/types'
-import { Props } from '../../types/utils'
+import { Props, ReactType } from '../../types/utils'
 import {
   AccessibilityBehavior,
   AccessibilityDefinition,
@@ -33,7 +33,7 @@ import { FOCUSZONE_WRAP_ATTRIBUTE } from './accessibility/FocusZone/focusUtiliti
 import createAnimationStyles from './createAnimationStyles'
 
 export interface RenderResultConfig<P> {
-  ElementType: React.ReactType<P>
+  ElementType: ReactType<P>
   classes: ComponentSlotClasses
   rest: Props
   variables: ComponentVariablesObject
@@ -146,7 +146,7 @@ const renderComponent = <P extends {}>(config: RenderConfig<P>): React.ReactElem
           rtl = false,
           renderer = felaRenderer,
         } = theme
-        const ElementType = getElementType({ defaultProps }, props) as React.ReactType<P>
+        const ElementType = getElementType({ defaultProps }, props) as ReactType<P>
 
         const stateAndProps = { ...state, ...props }
 
