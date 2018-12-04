@@ -9,6 +9,8 @@ export type Extendable<T> = T & {
 }
 
 export type Nullable<T> = T | null
+export type NullableIfUndefined<T> = T extends undefined ? Nullable<T> : T
+
 export type Partial<T> = { [Key in keyof T]?: T[Key] }
 
 export type ArgOf<T> = T extends (arg: infer TArg) => any ? TArg : never
@@ -24,7 +26,10 @@ export type ObjectOrFunc<TResult, TArg = {}> = ((arg: TArg) => TResult) | TResul
 // ========================================================
 
 export type Props = ObjectOf<any>
+
 export type ReactChildren = React.ReactNodeArray | React.ReactNode
+export type ReactProps<T> = { [K in keyof T]: NullableIfUndefined<T[K]> } & Extendable<T>
+
 export type ComponentEventHandler<TProps> = (event: React.SyntheticEvent, data: TProps) => void
 
 // ========================================================

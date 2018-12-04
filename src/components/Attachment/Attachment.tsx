@@ -9,7 +9,7 @@ import {
   ChildrenComponentProps,
   commonPropTypes,
 } from '../../lib'
-import { Extendable, ShorthandRenderFunction, ShorthandValue } from '../../../types/utils'
+import { ReactProps, ShorthandRenderFunction, ShorthandValue } from '../../../types/utils'
 import Icon from '../Icon/Icon'
 import Button from '../Button/Button'
 import Text from '../Text/Text'
@@ -83,7 +83,7 @@ export interface AttachmentProps extends UIComponentProps, ChildrenComponentProp
 /**
  * An Attachment displays a file attachment.
  */
-class Attachment extends UIComponent<Extendable<AttachmentProps>, any> {
+class Attachment extends UIComponent<ReactProps<AttachmentProps>, any> {
   static create: Function
 
   static className = 'ui-attachment'
