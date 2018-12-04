@@ -146,7 +146,7 @@ const renderComponent = <P extends {}>(config: RenderConfig<P>): React.ReactElem
           rtl = false,
           renderer = felaRenderer,
         } = theme
-        const ElementType = getElementType({ defaultProps }, props)
+        const ElementType = getElementType({ defaultProps }, props) as React.ReactType<P>
 
         const stateAndProps = { ...state, ...props }
 

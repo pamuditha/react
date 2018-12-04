@@ -144,7 +144,7 @@ export class FocusZone extends React.Component<FocusZoneProps> implements IFocus
 
   render() {
     const { className } = this.props
-    const ElementType = getElementType({ defaultProps: FocusZone.defaultProps }, this.props)
+    const ElementType = getElementType({ defaultProps: FocusZone.defaultProps }, this.props) as any
     const rest = getUnhandledProps({ handledProps: [..._.keys(FocusZone.propTypes)] }, this.props)
 
     return (
