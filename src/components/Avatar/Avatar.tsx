@@ -1,7 +1,7 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Image, Label, Status } from '../../'
-import { Extendable, ShorthandValue } from '../../../types/utils'
+import { ReactProps, ShorthandValue } from '../../../types/utils'
 import {
   createShorthandFactory,
   customPropTypes,
@@ -33,7 +33,7 @@ export interface AvatarProps extends UIComponentProps {
 /**
  * An avatar is a graphic representation of user.
  */
-class Avatar extends UIComponent<Extendable<AvatarProps>, any> {
+class Avatar extends UIComponent<ReactProps<AvatarProps>, any> {
   static create: Function
 
   static className = 'ui-avatar'

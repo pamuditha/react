@@ -12,7 +12,7 @@ import {
   commonPropTypes,
 } from '../../lib'
 import Label from '../Label/Label'
-import { ComponentEventHandler, Extendable, ShorthandValue } from '../../../types/utils'
+import { ComponentEventHandler, ReactProps, ShorthandValue } from '../../../types/utils'
 import Icon from '../Icon/Icon'
 import { Accessibility } from '../../lib/accessibility/types'
 import { radioGroupItemBehavior } from '../../lib/accessibility'
@@ -98,7 +98,7 @@ export interface RadioGroupItemState {
  * Radio items need to be grouped in RadioGroup component to correctly handle accessibility.
  */
 class RadioGroupItem extends AutoControlledComponent<
-  Extendable<RadioGroupItemProps>,
+  ReactProps<RadioGroupItemProps>,
   RadioGroupItemState
 > {
   private elementRef: HTMLElement

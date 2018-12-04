@@ -3,6 +3,7 @@ import * as React from 'react'
 import { findDOMNode } from 'react-dom'
 
 import { handleRef, ChildrenComponentProps, commonPropTypes } from '../../lib'
+import { ReactPropsStrict } from '../../../types/utils'
 
 export interface RefProps extends ChildrenComponentProps<React.ReactChild> {
   /**
@@ -17,7 +18,7 @@ export interface RefProps extends ChildrenComponentProps<React.ReactChild> {
  * This component exposes a callback prop that always returns the DOM node of both functional and class component
  * children.
  */
-export default class Ref extends React.Component<RefProps> {
+export default class Ref extends React.Component<ReactPropsStrict<RefProps>> {
   static propTypes = {
     ...commonPropTypes.createCommon({
       animated: false,

@@ -14,7 +14,7 @@ import {
   ContentComponentProps,
   commonPropTypes,
 } from '../../lib'
-import { ComponentEventHandler, Extendable, ShorthandValue } from '../../../types/utils'
+import { ComponentEventHandler, ReactProps, ShorthandValue } from '../../../types/utils'
 
 import Ref from '../Ref/Ref'
 import computePopupPlacement, { Alignment, Position } from './positioningHelper'
@@ -88,7 +88,7 @@ export interface PopupState {
  * @accessibility This is example usage of the accessibility tag.
  * This should be replaced with the actual description after the PR is merged
  */
-export default class Popup extends AutoControlledComponent<Extendable<PopupProps>, PopupState> {
+export default class Popup extends AutoControlledComponent<ReactProps<PopupProps>, PopupState> {
   public static displayName = 'Popup'
 
   public static className = 'ui-popup'
