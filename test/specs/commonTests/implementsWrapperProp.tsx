@@ -3,7 +3,7 @@ import { ReactWrapper } from 'enzyme'
 import { mountWithProvider as mount } from 'test/utils'
 
 import Slot from 'src/components/Slot/Slot'
-import { ShorthandValue } from 'types/utils'
+import { ShorthandValue } from 'utils'
 
 export interface ImplementsWrapperPropOptions {
   wrapppedComponentSelector: any
