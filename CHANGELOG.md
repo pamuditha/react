@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### BREAKING CHANGES
 - `type` prop is replaced with `color` in `Divider` component @layershifter ([#558](https://github.com/stardust-ui/react/pull/558))
+- Add `gutter` prop to `Chat.Item`, removed `avatar` from `Chat.Message` @Bugaa92 ([#556](https://github.com/stardust-ui/react/pull/556))
 
 ### Fixes
 - Fix `Provider` is not executing staticStyles with the merged siteVariables @mnajdova ([#559](https://github.com/stardust-ui/react/pull/559))
@@ -50,9 +51,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Documentation
 - Add the concept of the color palette @layershifter ([#451](https://github.com/stardust-ui/react/pull/451))
-
-### BREAKING CHANGES
-- Add `gutter` prop to `Chat.Item`, removed `avatar` from `Chat.Message` @Bugaa92 ([#556](https://github.com/stardust-ui/react/pull/556))
 
 ### Fixes
 - Add `react-dom` as available import in the editor @mnajdova ([#553](https://github.com/stardust-ui/react/pull/553))
