@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { ReactType } from 'react'
 import { Props } from '../../types/utils'
 
 /**
@@ -13,8 +13,8 @@ import { Props } from '../../types/utils'
 function getElementType(
   Component: { defaultProps?: Props },
   props: Props,
-  getDefault?: () => React.ReactType,
-): React.ReactType {
+  getDefault?: () => ReactType,
+): ReactType {
   const { defaultProps = {} } = Component
 
   // ----------------------------------------
