@@ -31,7 +31,7 @@ const CREATE_SHORTHAND_DEFAULT_OPTIONS: CreateShorthandOptions = {
   defaultProps: {},
   overrideProps: {},
   generateKey: true,
-  render: (Component, props) => <Component {...props} />,
+  render: (Component, props) => React.createElement(Component, props),
 }
 
 // It's only necessary to map props that don't use 'children' as value ('children' is the default)
