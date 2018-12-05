@@ -14,6 +14,7 @@ import ComponentExamples from './ComponentExamples'
 import ComponentProps from './ComponentProps'
 import ComponentSidebar from './ComponentSidebar'
 import ComponentAccessibility from './ComponentDocAccessibility'
+import ComponentExplorer from './ComponentExplorer'
 
 const topRowStyle = { margin: '1em' }
 const exampleEndStyle: React.CSSProperties = {
@@ -82,6 +83,17 @@ class ComponentDoc extends React.Component<any, any> {
             <Grid.Column>
               <Header as="h1" content={info.displayName} variables={{ color: 'black' }} />
               <p>{_.join(info.docblock.description, ' ')}</p>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row columns="equal">
+            <Grid.Column>
+              <ComponentExplorer info={info} />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row columns="equal">
+            <Grid.Column>
               <ComponentAccessibility info={info} />
               <ComponentDocSee displayName={info.displayName} />
               <ComponentDocLinks
