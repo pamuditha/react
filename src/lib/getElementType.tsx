@@ -1,4 +1,5 @@
-import { Props, ReactType } from '../../types/utils'
+import * as React from 'react'
+import { Props } from '../../types/utils'
 
 /**
  * Returns a createElement() type based on the props of the Component.
@@ -12,8 +13,8 @@ import { Props, ReactType } from '../../types/utils'
 function getElementType(
   Component: { defaultProps?: Props },
   props: Props,
-  getDefault?: () => ReactType,
-): ReactType {
+  getDefault?: () => React.ReactType,
+): React.ReactType {
   const { defaultProps = {} } = Component
 
   // ----------------------------------------

@@ -1,11 +1,10 @@
 import * as React from 'react'
-import { ReactType } from '../../../../types/utils'
 
 export interface FocusTrapZoneProps extends React.HTMLAttributes<HTMLDivElement> {
   /**
    * Element type the root element will use. Default is "div".
    */
-  as?: ReactType
+  as?: React.ReactType
 
   /**
    * Additional CSS class name(s) to apply.

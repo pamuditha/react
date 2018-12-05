@@ -7,7 +7,6 @@ import {
   ShorthandRenderCallback,
   ShorthandRenderFunction,
   ShorthandRenderer,
-  ReactType,
 } from '../../types/utils'
 import { mergeStyles } from './mergeThemes'
 
@@ -48,7 +47,7 @@ const mappedProps: { [key in HTMLTag]: ShorthandProp } = {
 
 /** A more robust React.createElement. It can create elements from primitive values. */
 export function createShorthand(
-  Component: ReactType,
+  Component: React.ReactType,
   mappedProp: string,
   valueOrRenderCallback?: ShorthandValue | ShorthandRenderCallback,
   options: CreateShorthandOptions = CREATE_SHORTHAND_DEFAULT_OPTIONS,
@@ -81,7 +80,7 @@ export function createShorthand(
  * @param {string} mappedProp A function that maps a primitive value to the Component props
  * @returns {function} A shorthand factory function waiting for `val` and `defaultProps`.
  */
-export function createShorthandFactory(Component: ReactType, mappedProp?: string) {
+export function createShorthandFactory(Component: React.ReactType, mappedProp?: string) {
   if (typeof Component !== 'function' && typeof Component !== 'string') {
     throw new Error('createShorthandFactory() Component must be a string or function.')
   }
@@ -94,7 +93,7 @@ export function createShorthandFactory(Component: ReactType, mappedProp?: string
 // ============================================================
 
 function createShorthandFromValue(
-  Component: ReactType,
+  Component: React.ReactType,
   mappedProp: string,
   value?: ShorthandValue,
   options: CreateShorthandOptions = CREATE_SHORTHAND_DEFAULT_OPTIONS,
@@ -196,13 +195,13 @@ function createShorthandFromValue(
   if (valIsReactElement) return React.cloneElement(value as React.ReactElement<Props>, props)
 
   // Create ReactElements from built up props
-  if (valIsPrimitive || valIsPropsObject) return <Component {...props} />
+  if (valIsPrimitive || valIsPropsObject) return React.createElement(Component, props)
 
   return null
 }
 
 function createShorthandFromRenderCallback(
-  Component: ReactType,
+  Component: React.ReactType,
   mappedProp: string,
   renderCallback: ShorthandRenderCallback,
   options: CreateShorthandOptions = CREATE_SHORTHAND_DEFAULT_OPTIONS,
